@@ -1,5 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Exo+2&family=Roboto&display=swap');
+
 $body-color: lightgrey;
+$font: 'Exo 2', sans-serif, 'DynaPuff', cursive, 'Roboto', sans-serif;
 
 body{
     background-color: $body-color;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    div{
+        padding: 1.25rem 1.5rem;
+        background-color: whitesmoke;
+        gap: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 4px 5px rgba($color: #000000, $alpha: 0.1);
+    }
+
+    div:hover{
+        background-color: rgba($color: whitesmoke, $alpha: 0.5);
+    }
 }
