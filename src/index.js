@@ -18,8 +18,7 @@ navElement.appendChild(contactDiv);
 
 contentElement.appendChild(navElement);
 
-//create Home Content
-
+//create title section
 const titleWrapperElement = document.createElement('div');
 const headlineElement = document.createElement('h1');
 const subtitleElement = document.createElement('div');
@@ -38,3 +37,14 @@ subtitleElement.appendChild(subLine2);
 titleWrapperElement.appendChild(headlineElement);
 titleWrapperElement.appendChild(subtitleElement);
 contentElement.appendChild(titleWrapperElement);
+
+//create bottom home section
+const bottomWrapper = document.createElement('div');
+const uberIcon = document.createElement('button');
+
+bottomWrapper.classList.add("bottom-wrapper");
+uberIcon.classList.add("uber-icon-button");
+uberIcon.style.backgroundImage = 'url("https://play-lh.googleusercontent.com/MMBG4AZmpMhSfhF5k7QnFmhvFbaF5ZC_BtEOIKRt9TIkUZjul2lWwPZV75PwTfoSm23-jgMxkroRGA-vkDg=s180-rw")';
+
+bottomWrapper.appendChild(uberIcon);
+contentElement.appendChild(bottomWrapper);
