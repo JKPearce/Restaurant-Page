@@ -55,7 +55,7 @@ nav {
     flex-direction: column;
     height: 100vh;
     flex-wrap: wrap;
-    
+
 
     h1 {
         display: flex;
@@ -99,7 +99,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1;
-    
+
     a {
         text-decoration: none;
         color: black;
@@ -110,14 +110,16 @@ footer {
         justify-content: center;
     }
 
-    a:visited{
+    a:visited {
         color: black;
     }
 
-    a:hover{
-        color: rgba($color: yellow, $alpha: 0.6);
+    a:hover {
+        color: rgba($color: $second-color, $alpha: 1);
         transform: scale(1.2);
         transition: transform 100ms;
+        text-shadow: 2px 2px rgba($color: #000000, $alpha: 0.3);
+
     }
 
     a::before {
