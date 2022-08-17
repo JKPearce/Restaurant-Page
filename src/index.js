@@ -1,4 +1,5 @@
 import "./style.scss";
+import GitHub from "./assets/icons/GitHub.png";
 
 //create navbar
 const contentElement = document.getElementById('content');
@@ -48,3 +49,13 @@ uberIcon.style.backgroundImage = 'url("https://play-lh.googleusercontent.com/MMB
 
 bottomWrapper.appendChild(uberIcon);
 contentElement.appendChild(bottomWrapper);
+
+//create footer
+const footerWrapper = document.createElement('footer');
+const gitHubIcon = document.createElement('a');
+
+gitHubIcon.href = 'https://github.com/JKPearce';
+gitHubIcon.textContent = " Made by Jaydon Pearce";
+
+footerWrapper.appendChild(gitHubIcon);
+contentElement.appendChild(footerWrapper);
