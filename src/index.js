@@ -1,61 +1,57 @@
 import "./style.scss";
-import GitHub from "./assets/icons/GitHub.png";
+import { createHomePage } from "./pages/home";
 
-//create navbar
 const contentElement = document.getElementById('content');
-const navElement = document.createElement('nav');
-const homeDiv = document.createElement('div');
-const menuDiv = document.createElement('div');
-const contactDiv = document.createElement('div');
 
-homeDiv.textContent = "Home";
-menuDiv.textContent = "Menu";
-contactDiv.textContent = "Contact";
+const createNavSection = () => {
+    const navElement = document.createElement('nav');
+    const homeDiv = document.createElement('div');
+    const menuDiv = document.createElement('div');
+    const contactDiv = document.createElement('div');
 
+    homeDiv.textContent = "Home";
+    homeDiv.setAttribute('data-nav-button', 1);
+    menuDiv.textContent = "Menu";
+    menuDiv.setAttribute('data-nav-button', 2);
+    contactDiv.textContent = "Contact";
+    contactDiv.setAttribute('data-nav-button', 3);
 
-navElement.appendChild(homeDiv);
-navElement.appendChild(menuDiv);
-navElement.appendChild(contactDiv);
+    navElement.addEventListener('click', (e) => {
+        const currentTab = parseInt(e.target.dataset.navButton);
+        switch (currentTab) {
+            case 1:
+                contentElement.insertBefore(createHomePage(), document.querySelector('footer'));
+                break;
+            case 2:
+                //create menu page
+                break;
+            case 3:
+                //create contact page
+                break;
+            default:
+                console.log("error occurred setting menu tab");
+        }
+    });
 
-contentElement.appendChild(navElement);
+    navElement.appendChild(homeDiv);
+    navElement.appendChild(menuDiv);
+    navElement.appendChild(contactDiv);
 
-//create title section
-const titleWrapperElement = document.createElement('div');
-const headlineElement = document.createElement('h1');
-const subtitleElement = document.createElement('div');
-const subLine1 = document.createElement('h2');
-const subLine2 = document.createElement('h2');
+    return navElement;
+};
 
-titleWrapperElement.classList.add('title-wrapper');
-headlineElement.textContent = 'Awesome restaurant';
-headlineElement.classList.add('title');
-subtitleElement.classList.add('subtitle');
-subLine1.textContent = "Join us for you next meal";
-subLine2.textContent = "For the most amazing food";
+const createFooter = () => {
+    const footerWrapper = document.createElement('footer');
+    const gitHubIcon = document.createElement('a');
 
-subtitleElement.appendChild(subLine1);
-subtitleElement.appendChild(subLine2);
-titleWrapperElement.appendChild(headlineElement);
-titleWrapperElement.appendChild(subtitleElement);
-contentElement.appendChild(titleWrapperElement);
+    gitHubIcon.href = 'https://github.com/JKPearce';
+    gitHubIcon.textContent = " Made by Jaydon Pearce";
 
-//create bottom home section
-const bottomWrapper = document.createElement('div');
-const uberIcon = document.createElement('button');
+    footerWrapper.appendChild(gitHubIcon);
 
-bottomWrapper.classList.add("bottom-wrapper");
-uberIcon.classList.add("uber-icon-button");
-uberIcon.style.backgroundImage = 'url("https://play-lh.googleusercontent.com/MMBG4AZmpMhSfhF5k7QnFmhvFbaF5ZC_BtEOIKRt9TIkUZjul2lWwPZV75PwTfoSm23-jgMxkroRGA-vkDg=s180-rw")';
+    return footerWrapper;
+}
 
-bottomWrapper.appendChild(uberIcon);
-contentElement.appendChild(bottomWrapper);
-
-//create footer
-const footerWrapper = document.createElement('footer');
-const gitHubIcon = document.createElement('a');
-
-gitHubIcon.href = 'https://github.com/JKPearce';
-gitHubIcon.textContent = " Made by Jaydon Pearce";
-
-footerWrapper.appendChild(gitHubIcon);
-contentElement.appendChild(footerWrapper);
+contentElement.appendChild(createNavSection());
+// contentElement.appendChild(createHomePage());
+contentElement.appendChild(createFooter());
