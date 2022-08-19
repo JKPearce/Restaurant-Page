@@ -103,6 +103,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    margin-top: auto;
 
     a {
         text-decoration: none;
@@ -167,4 +168,18 @@ footer {
 
 .menu-item:hover {
     background-color: rgba(99, 99, 99, 0.4);
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+
+    p{
+        align-self: flex-start;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 }
