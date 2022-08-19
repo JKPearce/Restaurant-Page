@@ -57,6 +57,5 @@ const createFooter = () => {
 }
 
 contentElement.before(createNavSection());
-// contentElement.appendChild(createHomePage());
-contentElement.appendChild(createContactPage());
+contentElement.appendChild(createHomePage());
 contentElement.after(createFooter());
