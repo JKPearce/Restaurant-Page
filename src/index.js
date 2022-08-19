@@ -20,7 +20,8 @@ const createNavSection = () => {
 
     navElement.addEventListener('click', (e) => {
         const currentTab = parseInt(e.target.dataset.navButton);
-        contentElement.innerHTML = ''; //current page
+        if(isNaN(currentTab)) return;
+        contentElement.innerHTML = ''; 
         switch (currentTab) {
             case 1:
                 contentElement.appendChild(createHomePage());
