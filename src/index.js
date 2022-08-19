@@ -1,6 +1,7 @@
 import "./style.scss";
 import { createHomePage } from "./pages/home";
 import { createMenuPage } from "./pages/menu";
+import { createContactPage } from "./pages/contact";
 
 const contentElement = document.getElementById('content');
 
@@ -23,14 +24,12 @@ const createNavSection = () => {
         switch (currentTab) {
             case 1:
                 contentElement.appendChild(createHomePage());
-                // contentElement.insertBefore(createHomePage(), document.querySelector('footer'));
                 break;
             case 2:
                 contentElement.appendChild(createMenuPage());
-                // contentElement.insertBefore(createMenuPage(), document.querySelector('footer'));
                 break;
             case 3:
-                //create contact page
+                contentElement.appendChild(createContactPage());
                 break;
             default:
                 console.log("error occurred setting menu tab");
@@ -59,5 +58,5 @@ const createFooter = () => {
 
 contentElement.before(createNavSection());
 // contentElement.appendChild(createHomePage());
-contentElement.appendChild(createMenuPage());
+contentElement.appendChild(createContactPage());
 contentElement.after(createFooter());
