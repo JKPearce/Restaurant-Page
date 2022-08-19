@@ -4,6 +4,7 @@ import mongolianBeefImage from "../assets/imgs/mongolianbeef.jpeg";
 
 const createMenuSection = () => {
     const menuWrapper = document.createElement('div');
+    menuWrapper.classList.add('menu-wrapper');
 
     menuWrapper.appendChild(createMenuItem("Schnitzel", "Tender chicken breast coated in breadcrumbs and fried topped with lemon", schnitzelImage));
     menuWrapper.appendChild(createMenuItem("Butter Chicken", "Authentic Indian butter chicken with naan", butterChickenImage));
@@ -31,8 +32,6 @@ const createMenuItem = (name, description, image) => {
 
     return menuItem;
 }
-
-
 
 const createMenuPage = () => {
     const menuPage = document.createElement('div');

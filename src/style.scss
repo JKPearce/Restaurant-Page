@@ -3,6 +3,7 @@
 
 $body-color: lightgrey;
 $second-color: whitesmoke;
+$main-shadow: 2px 2px rgba($color: #000000, $alpha: 0.3);
 $font: 'Exo 2', sans-serif, 'DynaPuff', cursive, 'Roboto', sans-serif;
 
 body {
@@ -48,14 +49,13 @@ nav {
 
 .title-wrapper {
     color: white;
-    text-shadow: 2px 2px rgba($color: #000000, $alpha: 0.3);
+    text-shadow: $main-shadow;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
     flex-wrap: wrap;
-
 
     h1 {
         display: flex;
@@ -125,4 +125,42 @@ footer {
         font-family: 'Bootstrap-icons';
         content: '\F3ED';
     }
+}
+
+.menu {
+    padding: 2rem;
+    max-width: 700px;
+}
+
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    padding: 4rem;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-shadow: $main-shadow;
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    p {
+        word-wrap: break-word;
+    }
+}
+
+.menu-item:hover {
+    background-color: rgba(99, 99, 99, 0.4);
 }
