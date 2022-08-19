@@ -1,5 +1,5 @@
 # Restaurant Page
-A single page with multiple sections about the restaurant
+A single page project for learning about JavaScript ES6 modules using imports and exports
 
 Live Demo: [Here](https://jkpearce.github.io/Restaurant-Page/)
 
@@ -10,8 +10,8 @@ The goal in this project is to understand modules by using npm and webpack
 - HTML
 - SCSS
 - JavaScript
-- npm
-- webpack
+- NPM
+- WebPack
 
 #### Future improvements
-- WIP
+- Add animations on page swaps

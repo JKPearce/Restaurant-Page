@@ -1,13 +1,13 @@
-const createTitleSection = () => {
-    const titleWrapper = document.createElement('div');
+const createMenuSection = () => {
+    const menuWrapper = document.createElement('div');
 
-    titleWrapper.textContent = 'MENU'
 
-    return titleWrapper;
+
+    return menuWrapper;
 }
 
-const createMenuSection = () => {
-
+const createMenuItem = () => {
+    
 }
 
 
@@ -16,8 +16,7 @@ const createMenuPage = () => {
     const menuPage = document.createElement('div');
 
     menuPage.classList.add('menu');
-    menuPage.appendChild(createTitleSection());
-    // menuPage.appendChild(createMenuSection());
+    menuPage.appendChild(createMenuSection());
 
     return menuPage;
 }
