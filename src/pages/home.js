@@ -23,12 +23,15 @@ const createTitleSection = () => {
 const createBottomSection = () => {
     const bottomWrapper = document.createElement('div');
     const uberIcon = document.createElement('button');
+    const orderNowText = document.createElement('p'); 
 
     bottomWrapper.classList.add("bottom-wrapper");
-    bottomWrapper.textContent = "Order now";
+
+    orderNowText.textContent = "Order now";
     uberIcon.classList.add("uber-icon-button");
     uberIcon.style.backgroundImage = 'url("https://play-lh.googleusercontent.com/MMBG4AZmpMhSfhF5k7QnFmhvFbaF5ZC_BtEOIKRt9TIkUZjul2lWwPZV75PwTfoSm23-jgMxkroRGA-vkDg=s180-rw")';
-
+    
+    bottomWrapper.appendChild(orderNowText);
     bottomWrapper.appendChild(uberIcon);
 
     return bottomWrapper;
