@@ -13,23 +13,34 @@ const createNavSection = () => {
 
     homeDiv.textContent = "Home";
     homeDiv.setAttribute('data-nav-button', 1);
+    homeDiv.classList.add('active');
     menuDiv.textContent = "Menu";
     menuDiv.setAttribute('data-nav-button', 2);
     contactDiv.textContent = "Contact";
     contactDiv.setAttribute('data-nav-button', 3);
 
+
     navElement.addEventListener('click', (e) => {
         const currentTab = parseInt(e.target.dataset.navButton);
-        if(isNaN(currentTab)) return;
-        contentElement.innerHTML = ''; 
+        if (isNaN(currentTab)) return;
+        //reset to defaults
+        contentElement.innerHTML = '';
+        homeDiv.classList.remove('active');
+        menuDiv.classList.remove('active');
+        contactDiv.classList.remove('active');
+
+
         switch (currentTab) {
             case 1:
+                homeDiv.classList.add('active');
                 contentElement.appendChild(createHomePage());
                 break;
             case 2:
+                menuDiv.classList.add('active');
                 contentElement.appendChild(createMenuPage());
                 break;
             case 3:
+                contactDiv.classList.add('active');
                 contentElement.appendChild(createContactPage());
                 break;
             default:
