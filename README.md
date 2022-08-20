@@ -14,4 +14,7 @@ The goal in this project is to understand modules by using npm and webpack
 - WebPack
 
 #### Future improvements
-- Add animations on page swaps
+- Add unique animations on page swaps
+- Clicking on menu item brings up nutrition details
+- Add menu filter to filter to certain food types e.g. chicken, beef, pasta, pizza, etc.
+- Add email form on contact page
